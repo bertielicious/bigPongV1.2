@@ -41,7 +41,8 @@ void main (void)
        bool binaryByte[8] = {1,1,1,1,1,1,1,1};
         for(col = 7; col >=0; col--) 
         {
-          result = colPattern(matrix, col,row, binaryByte[col]);
+          //result = colPattern(matrix, col,row, binaryByte[col]);// pass array by value
+            result = colPattern(matrix, col, row, &binaryByte[col]);// pass array by address
           if(col==0)
               break;
         }
@@ -53,10 +54,13 @@ void main (void)
        bool binaryByte1[8] = {0,0,0,1,1,1,0,0};
         for(col = 7; col >=0; col--) 
         {
-          result = colPattern(matrix, col, row, binaryByte1[col]);
+          //result = colPattern(matrix, col, row, binaryByte1[col]);// pass array by value
+            result = colPattern(matrix, col, row, &binaryByte1[col]);// pass array by address
           if(col==0)
               break;
         }
+       
+       
      
     while(1)
     {
